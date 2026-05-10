@@ -1,0 +1,107 @@
+# Huella de Carbono con POO en Python
+
+Este proyecto implementa un caso de estudio para evidenciar herencia, reutilizacion de codigo, polimorfismo, modularidad, manejo de archivos y pruebas unitarias en Python.
+
+## 1. Analisis del caso
+
+Se plantea un sistema que calcula la huella de carbono anual de distintas entidades:
+
+- `Edificio`: calcula emisiones por consumo de electricidad y gas.
+- `Auto`: calcula emisiones por consumo de combustible.
+- `Bicicleta`: calcula emisiones indirectas por fabricacion y mantenimiento.
+
+Aunque cada entidad usa una formula distinta, todas comparten el mismo objetivo: calcular su huella de carbono y mostrar su informacion. Por eso se definio una clase base comun.
+
+## 2. Diseno orientado a objetos
+
+### Herencia
+
+Las clases `Edificio`, `Auto` y `Bicicleta` heredan de `HuellaCarbonoBase`.
+
+### Polimorfismo
+
+Cada subclase implementa su propia version de:
+
+- `calcular_huella()`
+- `get_info()`
+
+El programa principal recorre una sola lista con objetos de distintos tipos y ejecuta los mismos metodos en todos ellos.
+
+### Reutilizacion de codigo
+
+La clase base incluye `mostrar_resultado()`, que se reutiliza en todas las subclases sin duplicar logica.
+
+### Modularidad
+
+Cada responsabilidad esta separada en un archivo:
+
+- [Huellacarbonobase.py](./Huellacarbonobase.py): clase base abstracta.
+- [Edificio.py](./Edificio.py): entidad edificio.
+- [Carro.py](./Carro.py): entidad auto.
+- [Bicicleta.py](./Bicicleta.py): entidad bicicleta.
+- [Manejadorarchivos.py](./Manejadorarchivos.py): guardar y leer reportes.
+- [Main.py](./Main.py): flujo principal del programa.
+- [Testclases.py](./Testclases.py): pruebas unitarias.
+
+### Manejo de archivos
+
+El modulo `Manejadorarchivos.py` permite:
+
+- Guardar un reporte en `.txt`
+- Leer el reporte generado
+- Calcular la huella total de una lista de entidades
+
+
+## 4. Ejecucion del programa
+
+Ejecuta el archivo principal:
+
+```bash
+python Main.py
+```
+
+El programa:
+
+1. Crea objetos de tipo `Edificio`, `Auto` y `Bicicleta`.
+2. Calcula su huella de carbono usando polimorfismo.
+3. Muestra los resultados en pantalla.
+4. Genera un archivo `reporte_huella.txt`.
+5. Lee el archivo para verificar su contenido.
+
+## 5. Pruebas unitarias
+
+Ejecuta las pruebas con:
+
+```bash
+python -m unittest Testclases.py -v
+```
+
+Las pruebas verifican:
+
+- Calculos de `Edificio`
+- Calculos de `Auto`
+- Calculos de `Bicicleta`
+- Validaciones de datos
+- Generacion del reporte de archivo
+- Suma total de huella
+
+## 6. Evidencias sugeridas para la entrega
+
+### Repositorio
+
+- Crear una rama con el nombre del correo solicitado por tu docente.
+- Subir el proyecto y compartir la URL del repositorio.
+
+
+
+## 7. Formula general usada
+
+- `Edificio`: `(kwh_electricidad * 0.233) + (m3_gas * 2.04)`
+- `Auto gasolina`: `(km_anuales / rendimiento) * 2.31`
+- `Auto diesel`: `(km_anuales / rendimiento) * 2.68`
+- `Auto electrico`: `0.0`
+- `Bicicleta`: `(co2_fabricacion / anios_vida_util) + (costo_mantenimiento * 0.5)`
+
+## 8. Conclusion
+
+El proyecto demuestra como la programacion orientada a objetos permite organizar mejor el codigo, reutilizar comportamiento y extender el sistema con nuevas clases sin afectar el funcionamiento general.
