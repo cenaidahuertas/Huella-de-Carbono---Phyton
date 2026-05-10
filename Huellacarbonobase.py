@@ -1,7 +1,5 @@
 
-
 from abc import ABC, abstractmethod
-
 
 class HuellaCarbonoBase(ABC):
     """
@@ -16,7 +14,6 @@ class HuellaCarbonoBase(ABC):
     def calcular_huella(self):
         """
         Calcula la huella de carbono anual en kg de CO2.
-        DEBE ser implementado por cada subclase.
         """
         raise NotImplementedError(
             "La subclase debe implementar calcular_huella()"
@@ -24,10 +21,6 @@ class HuellaCarbonoBase(ABC):
 
     @abstractmethod
     def get_info(self):
-        """
-        Retorna informacion del objeto para el reporte.
-        DEBE ser implementado por cada subclase.
-        """
         raise NotImplementedError(
             "La subclase debe implementar get_info()"
         )
