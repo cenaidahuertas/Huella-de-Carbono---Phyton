@@ -1,23 +1,3 @@
-# =============================================================
-# test_clases.py
-# Pruebas Unitarias - unittest
-# =============================================================
-#
-# PRUEBAS UNITARIAS:
-#   Segun el libro Cap. 1.9.3 - Unit tests:
-#   "Test fixtures are classes that inherit from
-#    unittest.TestCase"
-#   "Within a test fixture, the tests are any methods
-#    whose names begin with the prefix 'test'."
-#
-# PATRON AAA (Arrange - Act - Assert):
-#   Arrange : preparar los datos de prueba
-#   Act     : ejecutar el metodo que se prueba
-#   Assert  : verificar que el resultado es correcto
-#
-# Para ejecutar: python -m pytest test/test_clases.py -v
-#             o: python test/test_clases.py
-# =============================================================
 
 import unittest
 from pathlib import Path
@@ -48,7 +28,7 @@ class TestEdificio(unittest.TestCase):
         """
         # 10000 kWh x 0.233 = 2330.0 kg CO2
         # 1000 m3  x 2.04  = 2040.0 kg CO2
-        # Total esperado     = 4370.0 kg CO2/anio
+        # Total esperado     = 4370.0 kg CO2/año
         self.edificio = Edificio(
             nombre="Edificio Test",
             direccion="Bogota",
@@ -60,7 +40,7 @@ class TestEdificio(unittest.TestCase):
 
     def test_huella_total_correcta(self):
         """
-        La huella total debe ser 4370.0 kg CO2/anio.
+        La huella total debe ser 4370.0 kg CO2/año.
         10000 x 0.233 + 1000 x 2.04 = 2330 + 2040 = 4370
         """
         # ARRANGE: ya en setUp
@@ -71,7 +51,7 @@ class TestEdificio(unittest.TestCase):
 
         # ASSERT
         self.assertAlmostEqual(resultado, esperado, places=1,
-            msg="La huella del edificio debe ser 4370 kg CO2/anio")
+            msg="La huella del edificio debe ser 4370 kg CO2/año")
 
     def test_huella_solo_electricidad(self):
         """Sin gas, la huella es solo kWh x 0.233."""
@@ -130,7 +110,7 @@ class TestAuto(unittest.TestCase):
     def setUp(self):
         """
         Creamos tres autos de prueba: gasolina, diesel, electrico.
-        Con 10 km/L y 10000 km/anio → consumen 1000 litros.
+        Con 10 km/L y 10000 km/año → consumen 1000 litros.
         """
         self.auto_gasolina = Auto(
             marca="Toyota", modelo="Corolla", anio=2020,
@@ -162,7 +142,7 @@ class TestAuto(unittest.TestCase):
         resultado = self.auto_gasolina.calcular_huella()
 
         self.assertAlmostEqual(resultado, esperado, places=1,
-            msg="Auto gasolina debe ser 2310 kg CO2/anio")
+            msg="Auto gasolina debe ser 2310 kg CO2/año")
 
     def test_huella_diesel(self):
         """10000km / 10km/L x 2.68 = 2680 kg CO2."""
@@ -171,7 +151,7 @@ class TestAuto(unittest.TestCase):
         resultado = self.auto_diesel.calcular_huella()
 
         self.assertAlmostEqual(resultado, esperado, places=1,
-            msg="Auto diesel debe ser 2680 kg CO2/anio")
+            msg="Auto diesel debe ser 2680 kg CO2/año")
 
     def test_huella_electrico_es_cero(self):
         """Auto electrico no emite CO2 directamente."""
@@ -225,9 +205,9 @@ class TestBicicleta(unittest.TestCase):
     def setUp(self):
         """
         Bicicleta de prueba con valores conocidos:
-        co2_fabricacion=100, vida_util=10 → amort = 10/anio
-        costo_mantenimiento=50, factor=0.5 → emision = 25/anio
-        Total esperado = 35.0 kg CO2/anio
+        co2_fabricacion=100, vida_util=10 → amort = 10/año
+        costo_mantenimiento=50, factor=0.5 → emision = 25/año
+        Total esperado = 35.0 kg CO2/año
         """
         self.bici = Bicicleta(
             propietario="Ana Torres",
@@ -240,13 +220,13 @@ class TestBicicleta(unittest.TestCase):
         )
 
     def test_huella_total_correcta(self):
-        """100/10 + 50 x 0.5 = 10 + 25 = 35 kg CO2/anio."""
+        """100/10 + 50 x 0.5 = 10 + 25 = 35 kg CO2/año."""
         esperado = 35.0
 
         resultado = self.bici.calcular_huella()
 
         self.assertAlmostEqual(resultado, esperado, places=1,
-            msg="La huella de la bici debe ser 35 kg CO2/anio")
+            msg="La huella de la bici debe ser 35 kg CO2/año")
 
     def test_sin_mantenimiento_solo_amortizacion(self):
         """Sin mantenimiento, la huella es solo amortizacion."""

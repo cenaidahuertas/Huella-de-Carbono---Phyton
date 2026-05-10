@@ -5,40 +5,40 @@
 
 Entidad #1
 Info   : EDIFICIO: Torre Norte | Direccion: Calle 100 #15-30, Bogota | Pisos: 20 | Ocupantes: 850
-Huella : 129330.00 kg CO2/anio
-Detalle: Edificio(Torre Norte, Calle 100 #15-30, Bogota, 20 pisos, 450000 kWh/anio, 12000 m3/anio, 850 ocupantes)
+Huella : 129330.00 kg CO2/año
+Detalle: Edificio(Torre Norte, Calle 100 #15-30, Bogota, 20 pisos, 450000 kWh/año, 12000 m3/año, 850 ocupantes)
 -------------------------------------------------------
 Entidad #2
 Info   : EDIFICIO: Casa Familiar | Direccion: Carrera 45 #72-18, Medellin | Pisos: 2 | Ocupantes: 4
-Huella : 2470.80 kg CO2/anio
-Detalle: Edificio(Casa Familiar, Carrera 45 #72-18, Medellin, 2 pisos, 3600 kWh/anio, 800 m3/anio, 4 ocupantes)
+Huella : 2470.80 kg CO2/año
+Detalle: Edificio(Casa Familiar, Carrera 45 #72-18, Medellin, 2 pisos, 3600 kWh/año, 800 m3/año, 4 ocupantes)
 -------------------------------------------------------
 Entidad #3
-Info   : AUTO: 2021 Toyota Corolla | Combustible: GASOLINA | Km/anio: 18000
-Huella : 3080.00 kg CO2/anio
-Detalle: Auto(2021 Toyota Corolla, gasolina, 18000 km/anio)
+Info   : AUTO: 2021 Toyota Corolla | Combustible: GASOLINA | Km/año: 18000
+Huella : 3080.00 kg CO2/año
+Detalle: Auto(2021 Toyota Corolla, gasolina, 18000 km/año)
 -------------------------------------------------------
 Entidad #4
-Info   : AUTO: 2019 Ford Ranger | Combustible: DIESEL | Km/anio: 25000
-Huella : 7444.44 kg CO2/anio
-Detalle: Auto(2019 Ford Ranger, diesel, 25000 km/anio)
+Info   : AUTO: 2019 Ford Ranger | Combustible: DIESEL | Km/año: 25000
+Huella : 7444.44 kg CO2/año
+Detalle: Auto(2019 Ford Ranger, diesel, 25000 km/año)
 -------------------------------------------------------
 Entidad #5
-Info   : AUTO: 2023 Tesla Model 3 | Combustible: ELECTRICO | Km/anio: 20000
-Huella : 0.00 kg CO2/anio
-Detalle: Auto(2023 Tesla Model 3, electrico, 20000 km/anio)
+Info   : AUTO: 2023 Tesla Model 3 | Combustible: ELECTRICO | Km/año: 20000
+Huella : 0.00 kg CO2/año
+Detalle: Auto(2023 Tesla Model 3, electrico, 20000 km/año)
 -------------------------------------------------------
 Entidad #6
-Info   : BICICLETA: Trek urbana | Propietario: Carlos Rodriguez | Tipo: URBANA | Km/anio: 3500
-Huella : 34.60 kg CO2/anio
-Detalle: Bicicleta(Trek urbana, propietario: Carlos Rodriguez, 3500 km/anio)
+Info   : BICICLETA: Trek urbana | Propietario: Carlos Rodriguez | Tipo: URBANA | Km/año: 3500
+Huella : 34.60 kg CO2/año
+Detalle: Bicicleta(Trek urbana, propietario: Carlos Rodriguez, 3500 km/año)
 -------------------------------------------------------
 Entidad #7
-Info   : BICICLETA: Specialized electrica | Propietario: Laura Gomez | Tipo: ELECTRICA | Km/anio: 5000
-Huella : 56.75 kg CO2/anio
-Detalle: Bicicleta(Specialized electrica, propietario: Laura Gomez, 5000 km/anio)
+Info   : BICICLETA: Specialized electrica | Propietario: Laura Gomez | Tipo: ELECTRICA | Km/año: 5000
+Huella : 56.75 kg CO2/año
+Detalle: Bicicleta(Specialized electrica, propietario: Laura Gomez, 5000 km/año)
 -------------------------------------------------------
 
-TOTAL CO2: 142416.59 kg/anio
-EQUIVALE : 142.4166 toneladas/anio
+TOTAL CO2: 142416.59 kg/año
+EQUIVALE : 142.4166 toneladas/año
 =======================================================

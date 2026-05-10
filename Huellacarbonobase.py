@@ -1,24 +1,3 @@
-# =============================================================
-# huella_carbono_base.py
-# Clase Base (Interface) - HuellaCarbonoBase
-# =============================================================
-#
-# CONCEPTO POO - CLASE BASE / INTERFAZ:
-#   En Python no existe "interface" como en Java, pero podemos
-#   simularla con una clase base que define metodos que las
-#   subclases DEBEN implementar.
-#
-#   Segun el libro (Cap. 1.8.10 - Interfaces):
-#   "One way to define an interface is to define a class
-#    containing methods that have a header and a doc string
-#    but no implementation."
-#
-#   HERENCIA: Building, Auto y Bicicleta heredan de esta clase.
-#   POLIMORFISMO: cada subclase implementa calcular_huella()
-#                 a su manera.
-#
-# Referencia: Kuhlman, D. (2013). A Python Book, Cap. 1.8
-# =============================================================
 
 
 from abc import ABC, abstractmethod
@@ -62,7 +41,7 @@ class HuellaCarbonoBase(ABC):
         """
         print("-" * 50)
         print(self.get_info())
-        print("Huella de carbono: {:.2f} kg CO2/anio".format(
+        print("Huella de carbono: {:.2f} kg CO2/año".format(
             self.calcular_huella()
         ))
         print("-" * 50)
