@@ -1,23 +1,5 @@
-# =============================================================
-# bicicleta.py
-# Clase Bicicleta
-# =============================================================
-#
-# HERENCIA: Bicicleta hereda de HuellaCarbonoBase.
-# POLIMORFISMO: calcular_huella() usa formula de fabricacion.
-#
-# DATO: Las bicicletas NO emiten CO2 al rodar, pero tienen
-# una huella de fabricacion que se amortiza en su vida util.
-#
-# FORMULA HUELLA DE CARBONO BICICLETA:
-#   huella = (co2_fabricacion / anios_vida_util)
-#           + (costo_mantenimiento_usd x 0.5)
-#
-# Fuente: Chester & Horvath (2009)
-# =============================================================
 
 from Huellacarbonobase import HuellaCarbonoBase
-
 
 class Bicicleta(HuellaCarbonoBase):
     """
@@ -28,18 +10,17 @@ class Bicicleta(HuellaCarbonoBase):
         propietario (str): nombre del duenio
         marca (str): marca de la bicicleta
         tipo (str): tipo de bicicleta (urbana, montana, ruta)
-        km_anuales (float): km recorridos al anio
-        anios_vida_util (int): cuantos anios dura la bicicleta
+        km_anuales (float): km recorridos al año
+        anios_vida_util (int): cuantos años dura la bicicleta
         co2_fabricacion (float): kg CO2 emitidos al fabricarla
-        costo_mantenimiento (float): USD gastados en mant/anio
+        costo_mantenimiento (float): USD gastados en mant/año
     """
 
-    # Factor de emision del mantenimiento (Cap. 1.8.7)
     FACTOR_MANTENIMIENTO = 0.5   # kg CO2 por USD gastado
 
     def __init__(self, propietario, marca, tipo,
-                 km_anuales, anios_vida_util,
-                 co2_fabricacion, costo_mantenimiento):
+                km_anuales, anios_vida_util,
+                co2_fabricacion, costo_mantenimiento):
         """
         Constructor de la Bicicleta.
 
@@ -47,14 +28,14 @@ class Bicicleta(HuellaCarbonoBase):
             propietario (str): duenio de la bicicleta
             marca (str): marca de la bicicleta
             tipo (str): tipo (urbana, montana, ruta, electrica)
-            km_anuales (float): km recorridos por anio
-            anios_vida_util (int): anios de vida util estimados
+            km_anuales (float): km recorridos por año
+            anios_vida_util (int): años de vida util estimados
             co2_fabricacion (float): kg CO2 de su fabricacion
-            costo_mantenimiento (float): USD de mantenimiento/anio
+            costo_mantenimiento (float): USD de mantenimiento/año
         """
         self.validar_valor_no_negativo(km_anuales, "km_anuales")
         if anios_vida_util <= 0:
-            raise ValueError("anios_vida_util debe ser mayor que cero")
+            raise ValueError("años de vida util debe ser mayor que cero")
         self.validar_valor_no_negativo(
             co2_fabricacion, "co2_fabricacion"
         )
@@ -90,13 +71,13 @@ class Bicicleta(HuellaCarbonoBase):
             str: informacion de la bicicleta
         """
         return ("BICICLETA: {} {} | Propietario: {} | "
-                "Tipo: {} | Km/anio: {}").format(
+                "Tipo: {} | Km/año: {}").format(
                     self.marca, self.tipo, self.propietario,
                     self.tipo.upper(), self.km_anuales
                 )
 
     def __str__(self):
         """Representacion en texto del objeto."""
-        return "Bicicleta({} {}, propietario: {}, {} km/anio)".format(
+        return "Bicicleta({} {}, propietario: {}, {} km/año)".format(
             self.marca, self.tipo, self.propietario, self.km_anuales
         )
