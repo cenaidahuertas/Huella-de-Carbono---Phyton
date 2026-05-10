@@ -1,21 +1,3 @@
-# =============================================================
-# edificio.py
-# Clase Edificio
-# =============================================================
-#
-# CONCEPTO POO - HERENCIA:
-#   Edificio hereda de HuellaCarbonoBase.
-#   Segun el libro (Cap. 1.8.6 - Adding inheritance):
-#   "class B(A): ..." significa que B hereda de A.
-#
-# CONCEPTO POO - ENCAPSULAMIENTO:
-#   Los atributos se definen en __init__ con self.
-#   Se acceden con getters simples (Cap. 1.8.4).
-#
-# FORMULA HUELLA DE CARBONO EDIFICIO:
-#   CO2 = (kwh_electricidad x 0.233) + (m3_gas x 2.04)
-#   Fuente: EPA Greenhouse Gas Equivalencies Calculator
-# =============================================================
 
 from Huellacarbonobase import HuellaCarbonoBase
 
@@ -34,8 +16,7 @@ class Edificio(HuellaCarbonoBase):
         num_ocupantes (int): cantidad de personas en el edificio
     """
 
-    # -- Constantes de clase (compartidas por todos los edificios)
-    # Segun libro Cap. 1.8.7 - Class variables
+   
     FACTOR_ELECTRICIDAD = 0.233   # kg CO2 por kWh
     FACTOR_GAS = 2.04             # kg CO2 por m3
 
@@ -49,8 +30,8 @@ class Edificio(HuellaCarbonoBase):
             nombre (str): nombre del edificio
             direccion (str): direccion del edificio
             num_pisos (int): numero de pisos
-            kwh_electricidad (float): consumo electrico en kWh/anio
-            m3_gas (float): consumo de gas en m3/anio
+            kwh_electricidad (float): consumo electrico en kWh/año
+            m3_gas (float): consumo de gas en m3/año
             num_ocupantes (int): numero de ocupantes
         """
         # self guarda el estado de cada objeto (Cap. 1.8.3)
@@ -73,7 +54,7 @@ class Edificio(HuellaCarbonoBase):
         Formula: CO2 = (kWh x 0.233) + (m3 x 2.04)
 
         Returns:
-            float: kg de CO2 emitidos por el edificio al anio
+            float: kg de CO2 emitidos por el edificio al año
         """
         emision_electricidad = self.kwh_electricidad * self.FACTOR_ELECTRICIDAD
         emision_gas = self.m3_gas * self.FACTOR_GAS
@@ -98,7 +79,7 @@ class Edificio(HuellaCarbonoBase):
         Segun libro Cap. 1.9.1 - __str__() method.
         """
         return ("Edificio({}, {}, {} pisos, "
-                "{} kWh/anio, {} m3/anio, {} ocupantes)").format(
+                "{} kWh/año, {} m3/año, {} ocupantes)").format(
                     self.nombre, self.direccion, self.num_pisos,
                     self.kwh_electricidad, self.m3_gas,
                     self.num_ocupantes

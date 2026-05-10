@@ -1,28 +1,4 @@
-# =============================================================
-# main.py
-# Programa Principal - Huella de Carbono
-# =============================================================
-#
-# CASO DE ESTUDIO:
-#   Basado en Deitel & Deitel - How to Program in Java (9th ed.)
-#   Adaptado a Python usando Cap. 1.8 del libro de Kuhlman.
-#
-# CONCEPTOS POO DEMOSTRADOS:
-#   1. HERENCIA      - Edificio, Auto, Bicicleta heredan de
-#                      HuellaCarbonoBase
-#   2. POLIMORFISMO  - La lista guarda los 3 tipos y llama
-#                      calcular_huella() en cada uno distinto
-#   3. ENCAPSULAMIENTO - Atributos con self en cada clase
-#   4. MODULARIDAD   - Cada clase en su propio archivo/modulo
-#   5. REUTILIZACION - mostrar_resultado() definido UNA vez
-#                      en la clase base, usado por los 3 tipos
-#   6. ARCHIVOS      - Reporte guardado en .txt
-#
-# Segun libro Cap. 1.7.4 - para ejecutar un modulo:
-# if __name__ == '__main__': main()
-# =============================================================
 
-# Importamos nuestras clases (Cap. 1.7.4 - Modules)
 from Edificio import Edificio
 from Carro import Auto
 from Bicicleta import Bicicleta
@@ -54,8 +30,8 @@ def main():
         nombre="Torre Norte",
         direccion="Calle 100 #15-30, Bogota",
         num_pisos=20,
-        kwh_electricidad=450000,   # kWh al anio
-        m3_gas=12000,              # m3 de gas al anio
+        kwh_electricidad=450000,   # kWh al año
+        m3_gas=12000,              # m3 de gas al año
         num_ocupantes=850
     )
 
@@ -104,7 +80,7 @@ def main():
         km_anuales=3500,
         anios_vida_util=10,
         co2_fabricacion=96.0,     # kg CO2 de fabricacion
-        costo_mantenimiento=50.0  # USD al anio
+        costo_mantenimiento=50.0  # USD al año
     )
 
     bici2 = Bicicleta(
@@ -119,8 +95,7 @@ def main():
 
     # ──────────────────────────────────────────────────────
     # PASO 2: Guardar todos en una lista
-    #
-    # POLIMORFISMO: la lista guarda objetos de distintos tipos.
+    # la lista guarda objetos de distintos tipos.
     # Todos comparten la clase base HuellaCarbonoBase.
     # Python no necesita declarar el tipo de la lista.
     # ──────────────────────────────────────────────────────
@@ -134,16 +109,14 @@ def main():
     print("\nTotal de entidades: {}".format(len(entidades)))
 
     # ──────────────────────────────────────────────────────
-    # PASO 3: Iterar la lista de forma POLIMORFICA
-    #
+    # 
     # El for llama a calcular_huella() en cada objeto.
     # Python decide en tiempo de ejecucion cual usar:
     #   - Si es Edificio    → formula kWh y gas
     #   - Si es Auto        → formula litros x factor
     #   - Si es Bicicleta   → formula fabricacion
     #
-    # mostrar_resultado() esta en la clase BASE una sola vez.
-    # Eso es REUTILIZACION DE CODIGO.
+    # 
     # ──────────────────────────────────────────────────────
 
     print("\n--- RESULTADOS DE HUELLA DE CARBONO ---\n")
@@ -162,8 +135,8 @@ def main():
     print("  RESUMEN FINAL")
     print("=" * 55)
     print("  Entidades procesadas : {}".format(len(entidades)))
-    print("  Total CO2            : {:.2f} kg/anio".format(total_co2))
-    print("  Equivale a           : {:.4f} toneladas/anio".format(
+    print("  Total CO2            : {:.2f} kg/año".format(total_co2))
+    print("  Equivale a           : {:.4f} toneladas/año".format(
         total_co2 / 1000
     ))
     print("=" * 55)

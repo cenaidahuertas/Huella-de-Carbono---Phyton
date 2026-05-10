@@ -54,7 +54,7 @@ def guardar_reporte(lista_entidades, nombre_archivo="reporte_huella.txt"):
             huella = entidad.calcular_huella()
             archivo.write("Entidad #{}\n".format(numero))
             archivo.write("Info   : {}\n".format(entidad.get_info()))
-            archivo.write("Huella : {:.2f} kg CO2/anio\n".format(
+            archivo.write("Huella : {:.2f} kg CO2/año\n".format(
                 huella
             ))
             archivo.write("Detalle: {}\n".format(str(entidad)))
@@ -64,8 +64,8 @@ def guardar_reporte(lista_entidades, nombre_archivo="reporte_huella.txt"):
             numero += 1
 
         archivo.write("\n")
-        archivo.write("TOTAL CO2: {:.2f} kg/anio\n".format(total_co2))
-        archivo.write("EQUIVALE : {:.4f} toneladas/anio\n".format(
+        archivo.write("TOTAL CO2: {:.2f} kg/año\n".format(total_co2))
+        archivo.write("EQUIVALE : {:.4f} toneladas/año\n".format(
             total_co2 / 1000
         ))
         archivo.write("=" * 55 + "\n")

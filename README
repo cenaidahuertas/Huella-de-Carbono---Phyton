@@ -51,7 +51,6 @@ El modulo `Manejadorarchivos.py` permite:
 - Leer el reporte generado
 - Calcular la huella total de una lista de entidades
 
-
 ## 4. Ejecucion del programa
 
 Ejecuta el archivo principal:
@@ -92,15 +91,13 @@ Las pruebas verifican:
 - Crear una rama con el nombre del correo solicitado por tu docente.
 - Subir el proyecto y compartir la URL del repositorio.
 
-
-
 ## 7. Formula general usada
 
 - `Edificio`: `(kwh_electricidad * 0.233) + (m3_gas * 2.04)`
 - `Auto gasolina`: `(km_anuales / rendimiento) * 2.31`
 - `Auto diesel`: `(km_anuales / rendimiento) * 2.68`
 - `Auto electrico`: `0.0`
-- `Bicicleta`: `(co2_fabricacion / anios_vida_util) + (costo_mantenimiento * 0.5)`
+- `Bicicleta`: `(co2_fabricacion / años de vida util) + (costo_mantenimiento * 0.5)`
 
 ## 8. Conclusion
 
