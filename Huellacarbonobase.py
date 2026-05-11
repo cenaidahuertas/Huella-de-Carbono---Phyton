@@ -16,13 +16,11 @@ class HuellaCarbonoBase(ABC):
         Calcula la huella de carbono anual en kg de CO2.
         """
         raise NotImplementedError(
-            "La subclase debe implementar calcular_huella()"
         )
 
     @abstractmethod
     def get_info(self):
         raise NotImplementedError(
-            "La subclase debe implementar get_info()"
         )
 
     def mostrar_resultado(self):

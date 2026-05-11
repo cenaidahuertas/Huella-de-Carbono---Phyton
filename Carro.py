@@ -16,7 +16,6 @@ class Auto(HuellaCarbonoBase):
         tipo_combustible (str): 'gasolina', 'diesel' o 'electrico'
     """
 
-    # Factores de emision por tipo de combustible (Cap. 1.8.7)
     FACTOR_GASOLINA = 2.31   # kg CO2 por litro
     FACTOR_DIESEL = 2.68     # kg CO2 por litro
 
