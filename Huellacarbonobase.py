@@ -19,7 +19,6 @@ class HuellaCarbonoBase(ABC):
         DEBE ser implementado por cada subclase.
         """
         raise NotImplementedError(
-            "La subclase debe implementar calcular_huella()"
         )
 
     @abstractmethod
@@ -29,7 +28,6 @@ class HuellaCarbonoBase(ABC):
         DEBE ser implementado por cada subclase.
         """
         raise NotImplementedError(
-            "La subclase debe implementar get_info()"
         )
 
     def mostrar_resultado(self):

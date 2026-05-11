@@ -96,7 +96,7 @@ class TestEdificio(unittest.TestCase):
         self.edificio.kwh_electricidad = 20000  # doble
 
         self.assertGreater(self.edificio.calcular_huella(),
-                           huella_original,
+                        huella_original,
             msg="Mayor consumo debe producir mayor huella")
 
 
@@ -172,7 +172,7 @@ class TestAuto(unittest.TestCase):
         self.auto_gasolina.km_anuales = 20000  # doble de km
 
         self.assertGreater(self.auto_gasolina.calcular_huella(),
-                           huella_original,
+                        huella_original,
             msg="Mas km debe producir mayor huella")
 
     def test_combustible_en_minusculas(self):

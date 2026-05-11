@@ -1,7 +1,6 @@
 
 from Huellacarbonobase import HuellaCarbonoBase
 
-
 class Edificio(HuellaCarbonoBase):
     """
     Representa un edificio que consume electricidad y gas.
@@ -16,12 +15,11 @@ class Edificio(HuellaCarbonoBase):
         num_ocupantes (int): cantidad de personas en el edificio
     """
 
-   
     FACTOR_ELECTRICIDAD = 0.233   # kg CO2 por kWh
     FACTOR_GAS = 2.04             # kg CO2 por m3
 
     def __init__(self, nombre, direccion, num_pisos,
-                 kwh_electricidad, m3_gas, num_ocupantes):
+                kwh_electricidad, m3_gas, num_ocupantes):
         """
         Constructor del Edificio.
         Segun libro Cap. 1.8.3 - The constructor.
@@ -34,7 +32,6 @@ class Edificio(HuellaCarbonoBase):
             m3_gas (float): consumo de gas en m3/año
             num_ocupantes (int): numero de ocupantes
         """
-        # self guarda el estado de cada objeto (Cap. 1.8.3)
         self.validar_valor_no_negativo(num_pisos, "num_pisos")
         self.validar_valor_no_negativo(
             kwh_electricidad, "kwh_electricidad"
