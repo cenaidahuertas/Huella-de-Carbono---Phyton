@@ -316,7 +316,6 @@ class TestManejadorArchivos(unittest.TestCase):
 
 # =============================================================
 # Ejecutar las pruebas
-# Segun libro Cap. 1.9.3.1 - A simple example
 # =============================================================
 
 def main():

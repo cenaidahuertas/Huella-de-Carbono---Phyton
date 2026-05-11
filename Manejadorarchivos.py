@@ -1,24 +1,3 @@
-# =============================================================
-# manejador_archivos.py
-# Modulo de manejo de archivos
-# =============================================================
-#
-# MODULARIDAD:
-#   Este modulo tiene UNA sola responsabilidad: guardar
-#   y leer archivos. Segun el libro (Cap. 1.7.4 - Modules):
-#   "A module is a Python source code file."
-#   Separamos esta responsabilidad del programa principal
-#   para que el codigo sea mas organizado y reutilizable.
-#
-# MANEJO DE ARCHIVOS:
-#   Segun el libro Cap. 1.9.2 - File input and output:
-#   Se usa open() con modos 'w' (escribir) y 'r' (leer).
-#
-# REUTILIZACION:
-#   Cualquier otro programa puede importar este modulo
-#   y usar guardar_reporte() sin reescribir nada.
-# =============================================================
-
 import os
 
 
@@ -38,8 +17,6 @@ def guardar_reporte(lista_entidades, nombre_archivo="reporte_huella.txt"):
         lista_entidades (list): lista de objetos con calcular_huella()
         nombre_archivo (str): nombre del archivo de salida
     """
-    # open() con 'w' crea o sobreescribe el archivo
-    # encoding='utf-8' para soportar caracteres especiales
     with open(nombre_archivo, "w", encoding="utf-8") as archivo:
         archivo.write("=" * 55 + "\n")
         archivo.write("  REPORTE DE HUELLA DE CARBONO - POO PYTHON\n")
@@ -49,7 +26,6 @@ def guardar_reporte(lista_entidades, nombre_archivo="reporte_huella.txt"):
         total_co2 = 0
         numero = 1
 
-        # Recorremos la lista de forma POLIMORFICA
         for entidad in lista_entidades:
             huella = entidad.calcular_huella()
             archivo.write("Entidad #{}\n".format(numero))
