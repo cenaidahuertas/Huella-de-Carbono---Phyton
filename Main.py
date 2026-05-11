@@ -2,16 +2,10 @@
 from Edificio import Edificio
 from Carro import Auto
 from Bicicleta import Bicicleta
-from Manejadorarchivos import (
-    calcular_total_huella,
-    guardar_reporte,
-    leer_reporte,
-)
+from Manejadorarchivos import (calcular_total_huella,guardar_reporte,leer_reporte)
 
 
 def main():
-    """Funcion principal del programa."""
-
     print("=" * 55)
     print("  HUELLA DE CARBONO - POO PYTHON")
     print("  Basado en Cap. 1.8 - A Python Book")
@@ -19,10 +13,6 @@ def main():
 
     # ──────────────────────────────────────────────────────
     # PASO 1: Crear objetos de cada clase
-    #
-    # Cada clase tiene atributos DIFERENTES.
-    # No hay herencia entre Edificio, Auto y Bicicleta.
-    # Lo que comparten es la clase base HuellaCarbonoBase.
     # ──────────────────────────────────────────────────────
 
     # -- Edificios --
@@ -30,8 +20,8 @@ def main():
         nombre="Torre Norte",
         direccion="Calle 100 #15-30, Bogota",
         num_pisos=20,
-        kwh_electricidad=450000,   # kWh al año
-        m3_gas=12000,              # m3 de gas al año
+        kwh_electricidad=450000,   
+        m3_gas=12000,              
         num_ocupantes=850
     )
 
@@ -50,7 +40,7 @@ def main():
         modelo="Corolla",
         anio=2021,
         km_anuales=18000,
-        rendimiento=13.5,          # km por litro
+        rendimiento=13.5,          
         tipo_combustible="gasolina"
     )
 
@@ -68,7 +58,7 @@ def main():
         modelo="Model 3",
         anio=2023,
         km_anuales=20000,
-        rendimiento=0,             # no aplica
+        rendimiento=0,             
         tipo_combustible="electrico"
     )
 
@@ -79,10 +69,9 @@ def main():
         tipo="urbana",
         km_anuales=3500,
         anios_vida_util=10,
-        co2_fabricacion=96.0,     # kg CO2 de fabricacion
-        costo_mantenimiento=50.0  # USD al año
+        co2_fabricacion=96.0,     
+        costo_mantenimiento=50.0  
     )
-
     bici2 = Bicicleta(
         propietario="Laura Gomez",
         marca="Specialized",
@@ -109,7 +98,7 @@ def main():
     print("\nTotal de entidades: {}".format(len(entidades)))
 
     # ──────────────────────────────────────────────────────
-    # 
+    # PASO 3: Calcular la huella de carbono de cada entidad
     # El for llama a calcular_huella() en cada objeto.
     # Python decide en tiempo de ejecucion cual usar:
     #   - Si es Edificio    → formula kWh y gas
@@ -122,7 +111,6 @@ def main():
     print("\n--- RESULTADOS DE HUELLA DE CARBONO ---\n")
 
     for entidad in entidades:
-        # mostrar_resultado() es heredado de HuellaCarbonoBase
         entidad.mostrar_resultado()
 
     total_co2 = calcular_total_huella(entidades)
@@ -143,16 +131,13 @@ def main():
 
     # ──────────────────────────────────────────────────────
     # PASO 5: Guardar en archivo de texto
-    # (modulo externo - MODULARIDAD)
     # ──────────────────────────────────────────────────────
 
     print("\n--- GUARDANDO REPORTE EN ARCHIVO ---")
     guardar_reporte(entidades)
 
-    # Leemos el archivo para verificar que se guardo
     leer_reporte()
 
 
-# Segun libro Cap. 1.7.4 - idioma para modulos ejecutables
 if __name__ == "__main__":
     main()

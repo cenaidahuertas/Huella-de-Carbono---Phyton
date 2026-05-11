@@ -51,13 +51,7 @@ El modulo `Manejadorarchivos.py` permite:
 - Leer el reporte generado
 - Calcular la huella total de una lista de entidades
 
-## 4. Ejecucion del programa
 
-Ejecuta el archivo principal:
-
-```bash
-python Main.py
-```
 
 El programa:
 
@@ -84,12 +78,6 @@ Las pruebas verifican:
 - Generacion del reporte de archivo
 - Suma total de huella
 
-## 6. Evidencias sugeridas para la entrega
-
-### Repositorio
-
-- Crear una rama con el nombre del correo solicitado por tu docente.
-- Subir el proyecto y compartir la URL del repositorio.
 
 ## 7. Formula general usada
 
@@ -99,6 +87,3 @@ Las pruebas verifican:
 - `Auto electrico`: `0.0`
 - `Bicicleta`: `(co2_fabricacion / años de vida util) + (costo_mantenimiento * 0.5)`
 
-## 8. Conclusion
-
-El proyecto demuestra como la programacion orientada a objetos permite organizar mejor el codigo, reutilizar comportamiento y extender el sistema con nuevas clases sin afectar el funcionamiento general.
